@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<link href="views/css/style.css" type="text/css" rel="stylesheet">
+<head>
+    <meta charset="UTF-8">
+    <title>Student</title>
+</head>
+<body>
+<p style="display:inline">This is </p> <p th:text="${student.getName()}"/>
+<br>
+<p>He is from</p> <p th:text="${student.getGroup()}"/>
+<br>
+<form th:method="DELETE" th:action="@{/students/{id}(id=${student.getId()})}">
+        <input type = "submit" value="Delete student">
+</form>
+<a th:href="@{/students/{id}/edit(id=${student.getId()})}">Create student</a>
+
+<br>
+<a th:href="@{/students}">Go to the list of students</a>
+</body>
+</html>
